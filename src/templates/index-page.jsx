@@ -1,10 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from "../components/Layout";
+import TypedElement from "../components/TypedElement";
+
+const messages = [
+  `Programmer`,
+  `UI/UX Designer`,
+  `Front End Developer`,
+  `Web Developer`,
+  `Mobile Developer`,
+  `Full Stack Developer`,
+];
 
 export const IndexPageTemplate = ({
   image,
@@ -16,112 +24,10 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <div className="columns">
-      <div className="column">
-        <h1>Krestian Weken</h1>
-        <section className="section contact-info">
-          <div className="is-flex is-flex-direction-row">
-            <ul className="list-titles has-text-weight-bold">
-              <li>Call</li>
-              <li>Mail</li>
-              <li>Web</li>
-              <li>Home</li>
-            </ul>
-          
-            <ul className="list-content">
-              <li>+62 852 401 66691</li>
-              <li>chrisk8er@gmail.com</li>
-              <li><a href="https://krestian.website">krestian.website</a></li>
-              <li>Jakarta, Indonesia</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="section contact-presentation"> 
-          <p><span className="has-text-weight-bold">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
-        </section>
-
-        <section className="section contact-social">
-          <div className="is-flex is-flex-direction-row">
-            <ul className="list-titles has-text-weight-bold">
-              <li>Twitter</li>
-              <li>Dribbble</li>
-              <li>Codepen</li>
-            </ul>
-
-            <ul className="list-content"> 
-              <li><a href="">@janderson</a></li> 
-              <li><a href="">janderson</a></li> 
-              <li><a href="">janderson</a></li> 
-            </ul>
-          </div>
-        </section>
-      </div>
-
-      <div className="column is-three-fifths has-text-light has-background-dark">
-        <section className="section ">
-          <h3 className="experience-title">Experience</h3>
-          <div className="experience-wrapper">
-            <div className="company-wrapper clearfix">
-              <div className="experience-title">Company name</div> 
-              <div className="time">Nov 2012 - Present</div> 
-            </div>
-            
-            <div className="job-wrapper clearfix">
-              <div className="experience-title">Front End Developer </div> 
-              <div className="company-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  
-              </div>
-            </div>
-            
-            <div className="company-wrapper clearfix">
-              <div className="experience-title">Company name</div> 
-              <div className="time">Nov 2010 - Present</div> 
-            </div>
-            
-            <div className="job-wrapper clearfix">
-              <div className="experience-title">Freelance, Web Designer / Web Developer</div> 
-              <div className="company-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque quis magni pariatur, harum perferendis aliquid aliquam similique, minima enim sed omnis totam eius necessitatibus amet a temporibus nisi maxime minus.</p>  
-              </div>
-            </div>
-            
-            <div className="company-wrapper clearfix">
-              <div className="experience-title">Company name</div> 
-              <div className="time">Nov 2009 - Nov 2010</div>
-            </div> 
-            
-            <div className="job-wrapper clearfix">
-              <div className="experience-title">Web Designer </div> 
-              <div className="company-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <h3 className="section-title">Skills</h3>  
-            <ul>
-              <li className="skill-percentage">HTML / HTML5</li>
-              <li className="skill-percentage">CSS / CSS3 / SASS / LESS</li>
-              <li className="skill-percentage">Javascript</li>
-              <li className="skill-percentage">Jquery</li>
-              <li className="skill-percentage">Wordpress</li>
-              <li className="skill-percentage">Photoshop</li>
-            </ul>
-        </section>
-
-        <section className="section">
-          <h3 className="section-title">Hobbies</h3> 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
-          
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> 
-        </section>
-      </div>
-    </div>
+    <h1 className="is-size-1">Krestian Weken</h1>
+    <TypedElement messages={messages} />
   </div>
-)
+);
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -133,10 +39,10 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -150,8 +56,8 @@ const IndexPage = ({ data }) => {
         intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -159,9 +65,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -199,4 +105,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
