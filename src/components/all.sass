@@ -35,7 +35,7 @@ $primary-invert: $main-color-invert
   right: 50%
   margin: 2em -50vw
   background-size: cover
-  background-position: bottom
+  background-position:  bottom
   display: flex
   justify-content: center
   align-items: center
@@ -44,7 +44,7 @@ $primary-invert: $main-color-invert
     width: 100vw
     height: 400px
     background-size: cover
-    background-position: bottom
+    background-position:  bottom
     display: flex
     justify-content: center
     align-items: center
@@ -140,3 +140,45 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+
+/* Cursor */
+/* purgecss ignore */
+.typed-cursor
+  font-size: 2rem;
+  color: whitesmoke;
+
+
+// Gradient background
+.main-section
+  background: linear-gradient(225deg, #ff5ef7, #02f5ff);
+  background-size: 400% 400%;
+
+  -webkit-animation: GradientAnim 30s ease infinite;
+  -moz-animation: GradientAnim 30s ease infinite;
+  animation: GradientAnim 30s ease infinite;
+
+
+@-webkit-keyframes GradientAnim
+  0%
+    background-position: 13% 0%
+  50%
+    background-position: 88% 100%
+  100%
+    background-position: 13% 0%
+
+@-moz-keyframes GradientAnim
+  0%
+    background-position: 13% 0%
+  50%
+    background-position: 88% 100%
+  100%
+    background-position: 13% 0%
+
+@keyframes GradientAnim
+  0%
+    background-position: 13% 0%
+  50%
+    background-position: 88% 100%
+  100%
+    background-position: 13% 0%
+

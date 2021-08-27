@@ -12,14 +12,13 @@ const TypedElement = ({ messages }) => {
     const typed = new Typed('#typed', option);
   }, []);
   return (
-    <div className="is-flex">
-      <p className="mr-1">I am</p>
+    <div className="is-flex is-align-items-baseline">
       <ul id="typed-strings">
         {messages.map((value, index) => (
           <li key={index}>{value}</li>
         ))}
       </ul>
-      <span id="typed"></span>
+      <span id="typed" className="subtitle is-3 has-text-light"></span>
     </div>
   );
 };
