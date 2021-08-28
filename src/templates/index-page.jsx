@@ -28,12 +28,24 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => (
-  <section className="section is-large main-section">
-    <div className="container">
-      <h1 className="title is-1 has-text-light">Satisfy your needs.</h1>
-      <TypedElement className="has-text-light" messages={messages} />
+  // <section className="section is-large is-fullheight">
+  //   <div className="container">
+  //     <h1 className="subtitle is-3 has-text-light">Hello, I'm Krestian Weken</h1>
+  //     <h2 className="title is-1 has-text-light">Bring your ideas to life.</h2>
+  //     {/* <TypedElement className="has-text-light" messages={messages} /> */}
+  //   </div>
+  // </section>
+
+<section className="hero is-fullheight">
+  <div className="hero-body">
+    <div className="">
+      <h1 className="subtitle is-4 has-text-light">Hello, I'm Krestian</h1>
+      <h2 className="title is-1 has-text-light">I will bring your</h2>
+      <h2 className="title is-1 has-text-light">ideas to life.</h2>
+      <a className="button is-inverted" href="mailto:chrisk8er@gmail.com">Let's work together</a>
     </div>
-  </section>
+  </div>
+</section>
 );
 
 IndexPageTemplate.propTypes = {
