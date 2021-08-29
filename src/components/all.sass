@@ -195,8 +195,14 @@ $menu-label-color: $white-ter
 .hero-section
   padding: 18rem 3rem;
 
-.header-text
-  font-size: 6rem
+.main-title
+  background:url('https://media3.giphy.com/media/4aqsCOvQ7xnUrJnNd2/giphy.gif') center center no-repeat
+  background-size: cover
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  @include desktop
+    width: 60vw
+    font-size: 6em !important
 
 body
   background-color: #11181e

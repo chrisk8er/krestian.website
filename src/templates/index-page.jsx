@@ -40,9 +40,13 @@ export const IndexPageTemplate = ({
   <div className="hero-body">
     <div className="">
       <h1 className="subtitle is-4 has-text-light">Hello, I'm Krestian</h1>
-      <h2 className="title is-1 has-text-light">I will bring your</h2>
-      <h2 className="title is-1 has-text-light">ideas to life.</h2>
-      <a className="button is-inverted" href="mailto:chrisk8er@gmail.com">Let's work together</a>
+      <h2 className="title is-1 has-text-light main-title">I will bring your ideas to life.</h2>
+      <a className="button is-light is-inverted" href="mailto:chrisk8er@gmail.com">
+        <span>Let's work together 🤝</span>
+        {/* <span class="icon">
+          <i class="fab fa-github"></i>
+        </span> */}
+      </a>
     </div>
   </div>
 </section>
