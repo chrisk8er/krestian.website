@@ -149,54 +149,16 @@ $menu-label-color: $white-ter
   font-size: 2rem;
   color: whitesmoke;
 
-
-// Gradient background
-.main-section
-  background: linear-gradient(225deg, #ff5ef7, #02f5ff);
-  background-size: 400% 400%;
-
-  -webkit-animation: GradientAnim 30s ease infinite;
-  -moz-animation: GradientAnim 30s ease infinite;
-  animation: GradientAnim 30s ease infinite;
-
-
-@-webkit-keyframes GradientAnim
-  0%
-    background-position: 13% 0%
-  50%
-    background-position: 88% 100%
-  100%
-    background-position: 13% 0%
-
-@-moz-keyframes GradientAnim
-  0%
-    background-position: 13% 0%
-  50%
-    background-position: 88% 100%
-  100%
-    background-position: 13% 0%
-
-@keyframes GradientAnim
-  0%
-    background-position: 13% 0%
-  50%
-    background-position: 88% 100%
-  100%
-    background-position: 13% 0%
-    
-// Neon Fonts
-.neon-fonts
-  color: #FFF
-  font-weight: 100
-  font-size: 4rem
-  line-height: 1
-  text-shadow: 0 0 10px #ff006c, 0 0 20px #ff006c, 0 0 30px #ff006c, 0 0 40px #ff417d, 0 0 70px #ff417d, 0 0 80px #ff417d, 0 0 100px #ff417d, 0 0 150px #ff417d
-
 .hero-section
   padding: 18rem 3rem;
 
+.hero-body
+  background: url(../../static/img/krestian-mobile-bg.png) top center no-repeat
+  @include desktop
+    background: url(../../static/img/krestian-bg.png) center right no-repeat
+
 .main-title
-  background:url('https://media3.giphy.com/media/4aqsCOvQ7xnUrJnNd2/giphy.gif') center center no-repeat
+  background: url('https://media3.giphy.com/media/4aqsCOvQ7xnUrJnNd2/giphy.gif') center center no-repeat
   background-size: cover
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
