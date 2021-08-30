@@ -1,9 +1,10 @@
 ---
 templateKey: index-page
-title: My Resume
+title: Krestian Website
 image: /img/home-jumbotron.jpg
-heading: Krestian Weken Resume
-subheading: This is my resume
+heading: Hello, I'm Krestian
+subheading: I will bring your ideas to life.
+photo: /img/krestian-bg.png
 mainpitch:
   title: Why Kaldi
   description: >

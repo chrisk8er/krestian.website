@@ -1,5 +1,9 @@
 @import "~bulma/sass/utilities/initial-variables"
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600')
+@import "./fontawesome/fontawesome.scss"
+@import "./fontawesome/solid.scss"
+@import "./fontawesome/regular.scss"
+@import "./fontawesome/brands.scss"
 
 // Config vars
 // Kaldi logo brand color: #FD461E
@@ -152,10 +156,21 @@ $menu-label-color: $white-ter
 .hero-section
   padding: 18rem 3rem;
 
-.hero-body
-  background: url(../../static/img/krestian-mobile-bg.png) top center no-repeat
+.hero-photo
+  z-index: 50
+  width: 67vw
   @include desktop
-    background: url(../../static/img/krestian-bg.png) center right no-repeat
+    position: absolute
+    width: auto
+    right: 20px
+
+.hero-body
+  flex-direction: column
+  z-index: 100
+  // background: url(../../static/img/krestian-mobile-bg.png) top center no-repeat
+  @include desktop
+    flex-direction: row
+    // background: url(../../static/img/krestian-bg.png) center right no-repeat
 
 .main-title
   background: url('https://media3.giphy.com/media/4aqsCOvQ7xnUrJnNd2/giphy.gif') center center no-repeat
@@ -165,7 +180,83 @@ $menu-label-color: $white-ter
   @include desktop
     width: 60vw
     font-size: 6em !important
+.hero-content 
+  z-index: 100
 
 body
   background-color: #11181e
+
+// Font Awesome background Animation
+.hero-background
+  position: absolute
+  left: 0px
+  width: 100%
+  height: 100vh
+  display: flex
+  flex-direction: column
+  overflow: hidden
+
+.hero-background .font
+  position: relative
+  top: -60%
+  width: 100%
+  display: flex
+  padding: 10px 0
+  white-space: nowrap
+  font-size: 50px
+  transform: rotate(30deg)
+
+i
+  color: rgba(47, 47, 47, 0.42)
+  transition: 1s
+  padding: 0 5px
+  user-select: none
+  cursor: default
+
+i:hover
+  transition: 0s
+  color: rgb(0, 38, 255)
+  text-decoration-color: rgb(38, 52, 114)
+  text-shadow: 0 0 120px rgb(0, 4, 255)
+
+.hero-background .font div
+  animation: animate1 80s linear infinite
+  animation-delay: -80s
+
+.hero-background .font div:nth-child(2)
+  animation: animate2 80s linear infinite
+  animation-delay: -40s
+
+@keyframes animate1
+  0%
+    transform: translateX(100%)
+  100%
+    transform: translateX(-100%)
+
+@keyframes animate2
+  0%
+    transform: translateX(0%)
+  100%
+    transform: translateX(-200%)
+
+.hero-background .font:nth-child(even) div
+  animation: animate3 80s linear infinite
+  animation-delay: -80s
+
+.hero-background .font:nth-child(even) div:nth-child(2)
+  animation: animate4 80s linear infinite
+  animation-delay: -40s
+
+@keyframes animate3
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(100%)
+
+@keyframes animate4 
+  0%
+    transform: translateX(-200%)
+  100%
+    transform: translateX(0)
+
 
