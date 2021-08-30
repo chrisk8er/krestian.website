@@ -29,14 +29,16 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => (
-  // <section className="section is-large is-fullheight">
-  //   <div className="container">
-  //     <h1 className="subtitle is-3 has-text-light">Hello, I'm Krestian Weken</h1>
-  //     <h2 className="title is-1 has-text-light">Bring your ideas to life.</h2>
-  //     {/* <TypedElement className="has-text-light" messages={messages} /> */}
-  //   </div>
-  // </section>
 <>
+{/* <nav class="navbar is-transparent is-fixed-top">
+  <div className="navbar-brand">
+    <div className="container">
+      <a className="navbar-item" href="https://krestian.website">
+        <h1 className="title has-text-light">KRESTIAN</h1>
+      </a>
+    </div>
+  </div>
+</nav> */}
 <section className="hero is-fullheight">
   <div className="hero-body">
     <img className="hero-photo" src={!!photo.childImageSharp ? photo.childImageSharp.fixed.src : photo} alt="Krestian Photo"/>

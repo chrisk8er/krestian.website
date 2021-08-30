@@ -157,19 +157,19 @@ $menu-label-color: $white-ter
   padding: 18rem 3rem;
 
 .hero-photo
+  display: none
   z-index: 50
   width: 67vw
   @include desktop
+    display: block
     position: absolute
     width: auto
     right: 20px
 
 .hero-body
-  flex-direction: column
   z-index: 100
   // background: url(../../static/img/krestian-mobile-bg.png) top center no-repeat
   @include desktop
-    flex-direction: row
     // background: url(../../static/img/krestian-bg.png) center right no-repeat
 
 .main-title
@@ -208,7 +208,7 @@ body
   transform: rotate(30deg)
 
 i
-  color: rgba(47, 47, 47, 0.42)
+  color: rgba(47, 47, 47, 0.17)
   transition: 1s
   padding: 0 5px
   user-select: none
