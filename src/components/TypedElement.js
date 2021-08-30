@@ -18,7 +18,7 @@ const TypedElement = ({ messages }) => {
           <li key={index}>{value}</li>
         ))}
       </ul>
-      <span id="typed" className="subtitle is-3 has-text-light"></span>
+      <span id="typed" className="subtitle is-size-4 is-size-5-mobile has-text-light"></span>
     </div>
   );
 };

@@ -9,6 +9,7 @@
 // Kaldi logo brand color: #FD461E
 $main-color: #66cc99
 $main-color-invert: #fff
+$navbar-background-color: transparent
 
 $primary: $main-color
 $primary-invert: $main-color-invert
@@ -167,7 +168,7 @@ $menu-label-color: $white-ter
     right: 20px
 
 .hero-body
-  z-index: 100
+  z-index: 20
   // background: url(../../static/img/krestian-mobile-bg.png) top center no-repeat
   @include desktop
     // background: url(../../static/img/krestian-bg.png) center right no-repeat
@@ -180,11 +181,34 @@ $menu-label-color: $white-ter
   @include desktop
     width: 60vw
     font-size: 6em !important
+
 .hero-content 
-  z-index: 100
+  z-index: 30
 
 body
   background-color: #11181e
+
+.cta-link
+  position: relative
+  display: inline-grid
+  text-transform: uppercase
+  text-decoration: none
+  font-weight: 600
+  height: 2rem
+  line-height: 2rem
+  color: white
+
+.cta-link:after
+  content: ""
+  bottom: 1px
+  border-width: 0 0 1px
+  border-style: solid
+  background-color: #fff
+
+.shakehand
+    margin-left: 0.7rem
+    position: absolute
+    font-size: 1.5em
 
 // Font Awesome background Animation
 .hero-background
