@@ -3,6 +3,7 @@ templateKey: "resume-page"
 path: /resume
 title: My Resume
 image: /img/jumbotron.jpg
+photo_profile: /img/photo-profile.jpg
 heading: Krestian Weken Resume
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their

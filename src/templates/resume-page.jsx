@@ -8,6 +8,7 @@ import BlogRoll from "../components/BlogRoll";
 
 export const ResumePageTemplate = ({
   image,
+  photo_profile,
   title,
   heading,
   subheading,
@@ -24,7 +25,7 @@ export const ResumePageTemplate = ({
               <div className="image is-128x128" style={{margin: '0 auto'}}>
                 <img
                   className="is-rounded"
-                  src="https://media-exp1.licdn.com/dms/image/C5103AQFwReuBcnRahQ/profile-displayphoto-shrink_200_200/0/1516952059931?e=1632355200&v=beta&t=hu2t5eQPkoNJjATj2zXK9vz6ARNdaBbCOh4rVeHoal0"
+                  src={!!photo_profile.childImageSharp ? photo_profile.childImageSharp.fixed.src : photo_profile}
                   alt="Krestian Weken Picture"
                 />
               </div>
@@ -92,26 +93,23 @@ export const ResumePageTemplate = ({
         </section>
 
         <section className="section contact-social">
-          <div className="is-flex is-flex-direction-row">
-            <ul className="list-titles has-text-weight-bold">
-              <li className="mb-3">LinkedIn</li>
-              <li className="mb-3">Facebook</li>
-              <li className="mb-3">Instagram</li>
-            </ul>
+          <div className="columns">
+            <div className="column is- has-text-centered">
+              <p className="mb-3"><span><i className="fab fa-linkedin resume-social-icon"></i></span></p>
+              <a href="https://id.linkedin.com/in/krestian-weken">
+                /krestian-weken
+              </a>
+            </div>
 
-            <ul className="list-content">
-              <li className="mb-3">
-                <a href="https://id.linkedin.com/in/krestian-weken">
-                  krestian-weken
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="https://fb.com/chrisk8er">chrisk8er</a>
-              </li>
-              <li className="mb-3">
-                <a href="https://instagram.com/chrisk8er">@chrisk8er</a>
-              </li>
-            </ul>
+            <div className="column is- has-text-centered">
+              <p className="mb-3"><span><i className="fab fa-facebook resume-social-icon"></i></span></p>
+              <a href="https://fb.com/chrisk8er">/chrisk8er</a>
+            </div>
+
+            <div className="column is- has-text-centered">
+              <p className="mb-3"><span><i className="fab fa-instagram resume-social-icon"></i></span></p>
+              <a href="https://instagram.com/chrisk8er">@chrisk8er</a>
+            </div>
           </div>
         </section>
       </div>
@@ -332,6 +330,7 @@ export const ResumePageTemplate = ({
 
 ResumePageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  photo_profile: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -349,6 +348,7 @@ const ResumePage = ({ data }) => {
     <Layout>
       <ResumePageTemplate
         image={frontmatter.image}
+        photo_profile={frontmatter.photo_profile}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
@@ -379,6 +379,13 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        photo_profile {
+          childImageSharp {
+            fixed (width: 200) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
