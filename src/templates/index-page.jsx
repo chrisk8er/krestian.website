@@ -39,7 +39,7 @@ export const IndexPageTemplate = ({
     </div>
   </div>
 </nav>
-<section className="hero is-fullheight">
+<section className="hero is-fullheight" style={{ backgroundColor: '#11181e'}}>
   <div className="hero-body">
     <img className="hero-photo" src={!!photo.childImageSharp ? photo.childImageSharp.fixed.src : photo} alt="Krestian Photo"/>
     <div className="hero-content">
